@@ -1,4 +1,4 @@
-name: handin
+name: fairytales
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 1.0.0+9
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -23,22 +23,330 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.0
+  audioplayers: ^0.15.1
+  assets_audio_player: ^2.0.5+1
+  google_fonts: ^1.1.2
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+    
+  firebase_analytics: ^5.0.2
+  firebase_core: "^0.5.2"
+  cloud_firestore: ^0.14.3  
+  firebase_auth: "^0.18.3"
+  shared_preferences: ^0.5.12+4
+  imagebutton: ^0.0.6
+  flutter_svg: ^0.17.4
+  flutter_launcher_icons: ^0.7.5
+
+
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+flutter_icons:
+  image_path: "asset/logo.png"
+  android: true
+  ios: true
 # The following section is specific to Flutter.
 flutter:
 
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Light.ttf
+        - asset: fonts/Montserrat/Montserrat-Medium.ttf
+          style: italic
+
+  assets:
+    - asset/pirateslogo.png
+    - asset/JumpingBackground.png
+    - asset/shooter.png
+    - asset/gubbiClosedLeft.png
+    - asset/gubbiClosed.png
+    - asset/tooth.png
+    - asset/purple.png
+    - asset/purpleJump.png
+    - asset/purpleStand.png
+    - asset/MarioBackground.png
+    - asset/backgroundMenu.png
+    - asset/bubbleTrouble.png
+    - asset/bubbleTrouble_2.png
+    - asset/bubbleTrouble_3.png
+    - asset/bubbleTrouble_4.png
+    - asset/gubbiSpil.png
+    - asset/bgr_1.png
+    - asset/wand.png
+    - asset/submenu1.png
+    - asset/submenu2.png
+    - asset/submenu3.png
+    - asset/submenu4.png
+    - asset/running.png
+    - asset/standing.png
+    - asset/jump.png
+    - asset/flappybackground.png
+    - asset/flappybackground_2.png
+    - asset/flappybackground_3.png
+    - asset/flappybackground_4.png
+    - asset/tree.png
+    - asset/Ship.png
+    - asset/firework.gif
+    - asset/Shop.png
+    - asset/shopitems/blueShooter.png
+    - asset/shopitems/greenShooter.png
+    - asset/shopitems/orangeShooter.png
+    - asset/shopitems/pinkShooter.png
+    - asset/shopitems/purpleShooter.png
+    - asset/shopitems/redShooter.png
+    - asset/shopitems/blueShooterBought.png
+    - asset/shopitems/greenShooterBought.png
+    - asset/shopitems/orangeShooterBought.png
+    - asset/shopitems/pinkShooterBought.png
+    - asset/shopitems/purpleShooterBought.png
+    - asset/shopitems/redShooterBought.png
+    - asset/figures/3_1.png
+    - asset/figures/3_2.png
+    - asset/figures/3_3.png
+    - asset/figures/3_4.png
+    - asset/figures/3_5.png
+    - asset/figures/3_6.png
+    - asset/figures/3_7.png
+    - asset/figures/3_8.png
+    - asset/figures/3_9.png
+    - asset/figures/3_10.png
+    - asset/figures/3_11.png
+    - asset/figures/3_12.png
+    - asset/figures/3_13.png
+    - asset/figures/3_14.png
+    - asset/figures/3_15.png
+    - asset/figures/3_16.png
+    - asset/figures/3_17.png
+    - asset/figures/3_18.png
+    - asset/figures/3_19.png
+    - asset/figures/3_20.png
+    - asset/figures/3_21.png
+    - asset/figures/4_1.png
+    - asset/figures/4_2.png
+    - asset/figures/4_3.png
+    - asset/figures/4_4.png
+    - asset/figures/4_5.png
+    - asset/figures/4_6.png
+    - asset/figures/4_7.png
+    - asset/figures/4_8.png
+    - asset/figures/4_9.png
+    - asset/figures/4_10.png
+    - asset/figures/4_11.png
+    - asset/figures/4_12.png
+    - asset/figures/4_13.png
+    - asset/figures/4_14.png
+    - asset/figures/4_15.png
+    - asset/figures/4_16.png
+    - asset/figures/4_17.png
+    - asset/figures/4_18.png
+    - asset/figures/4_19.png
+    - asset/figures/4_20.png
+    - asset/figures/4_21.png
+    - asset/figures/5_1.png
+    - asset/figures/5_2.png
+    - asset/figures/5_3.png
+    - asset/figures/5_4.png
+    - asset/figures/5_5.png
+    - asset/figures/5_6.png
+    - asset/figures/5_7.png
+    - asset/figures/5_8.png
+    - asset/figures/5_9.png
+    - asset/figures/5_10.png
+    - asset/figures/5_11.png
+    - asset/figures/5_12.png
+    - asset/figures/5_13.png
+    - asset/figures/5_14.png
+    - asset/figures/5_15.png
+    - asset/figures/5_16.png
+    - asset/figures/5_17.png
+    - asset/figures/5_18.png
+    - asset/figures/5_19.png
+    - asset/figures/5_20.png
+    - asset/figures/5_21.png
+    - asset/figures/6_1.png
+    - asset/figures/6_2.png
+    - asset/figures/6_3.png
+    - asset/figures/6_4.png
+    - asset/figures/6_5.png
+    - asset/figures/6_6.png
+    - asset/figures/6_7.png
+    - asset/figures/6_8.png
+    - asset/figures/6_9.png
+    - asset/figures/6_10.png
+    - asset/figures/6_11.png
+    - asset/figures/6_12.png
+    - asset/figures/6_13.png
+    - asset/figures/6_14.png
+    - asset/figures/6_15.png
+    - asset/figures/6_16.png
+    - asset/figures/6_17.png
+    - asset/figures/6_18.png
+    - asset/figures/6_19.png
+    - asset/figures/6_20.png
+    - asset/figures/6_21.png
+    - asset/figures/O_1.png
+    - asset/figures/O_2.png
+    - asset/figures/O_3.png
+    - asset/figures/O_4.png
+    - asset/figures/O_5.png
+    - asset/figures/O_6.png
+    - asset/figures/O_7.png
+    - asset/figures/O_8.png
+    - asset/figures/O_9.png
+    - asset/figures/O_10.png
+    - asset/figures/O_11.png
+    - asset/figures/O_12.png
+    - asset/figures/O_13.png
+    - asset/figures/O_14.png
+    - asset/figures/O_15.png
+    - asset/figures/O_16.png
+    - asset/figures/O_17.png
+    - asset/figures/O_18.png
+    - asset/figures/O_19.png
+    - asset/figures/O_20.png
+    - asset/figures/O_21.png
+    - asset/book/1.png
+    - asset/book/2.png
+    - asset/book/3.png
+    - asset/book/4.png
+    - asset/book/5.png
+    - asset/book/6.png
+    - asset/book/7.png
+    - asset/book/8.png
+    - asset/book/9.png
+    - asset/book/10.png
+    - asset/book/11.png
+    - asset/book/12.png
+    - asset/book/13.png
+    - asset/book/14.png
+    - asset/book/15.png
+    - asset/book/16.png
+    - asset/book/17.png
+    - asset/book/18.png
+    - asset/book/19.png
+    - asset/book/20.png
+    - asset/book/21.png
+    - asset/book/22.png
+    - asset/book/23.png
+    - asset/book/24.png
+    - asset/book/25.png
+    - asset/book/26.png
+    - asset/book/27.png
+    - asset/book/28.png
+    - asset/book/29.png
+    - asset/book/30.png
+    - asset/book/31.png
+    - asset/book/32.png
+    - asset/book/33.png
+    - asset/book/34.png
+    - asset/book/35.png
+    - asset/book/36.png
+    - asset/book/37.png
+    - asset/book/38.png
+    - asset/book/39.png
+    - asset/book/40.png
+    - asset/book/41.png
+    - asset/book/42.png
+    - asset/book/43.png
+    - asset/book/44.png
+    - asset/book/45.png
+    - asset/book/46.png
+    - asset/book/47.png
+    - asset/book/48.PNG
+    - asset/book/49.png
+    - asset/book/50.png
+    - asset/book/51.png
+    - asset/book/52.png
+    - asset/book/53.png
+    - asset/book/54.png
+    - asset/book/55.png
+    - asset/book/Forside.PNG
+    - asset/book/audio/StartSound.mp3
+    - asset/book/audio/1.mp3
+    - asset/book/audio/2.mp3
+    - asset/book/audio/3.mp3
+    - asset/book/audio/4.mp3
+    - asset/book/audio/5.mp3
+    - asset/book/audio/6.mp3
+    - asset/book/audio/7.mp3
+    - asset/book/audio/8.mp3
+    - asset/book/audio/9.mp3
+    - asset/book/audio/10.mp3
+    - asset/book/audio/11.mp3
+    - asset/book/audio/12.mp3
+    - asset/book/audio/13.mp3
+    - asset/book/audio/14.mp3
+    - asset/book/audio/15.mp3
+    - asset/book/audio/16.mp3
+    - asset/book/audio/17.mp3
+    - asset/book/audio/18.mp3
+    - asset/book/audio/19.mp3
+    - asset/book/audio/20.mp3
+    - asset/book/audio/21.mp3
+    - asset/book/audio/22.mp3
+    - asset/book/audio/23.mp3
+    - asset/book/audio/24.mp3
+    - asset/book/audio/25.mp3
+    - asset/book/audio/26.mp3
+    - asset/book/audio/27.mp3
+    - asset/book/audio/28.mp3
+    - asset/book/audio/29.mp3
+    - asset/book/audio/30.mp3
+    - asset/book/audio/31.mp3
+    - asset/book/audio/32.mp3
+    - asset/book/audio/33.mp3
+    - asset/book/audio/34.mp3
+    - asset/book/audio/35.mp3
+    - asset/book/audio/36.mp3
+    - asset/book/audio/37.mp3
+    - asset/book/audio/38.mp3
+    - asset/book/audio/39.mp3
+    - asset/book/audio/40.mp3
+    - asset/book/audio/41.mp3
+    - asset/book/audio/42.mp3
+    - asset/book/audio/43.mp3
+    - asset/book/audio/44.mp3
+    - asset/book/audio/45.mp3
+    - asset/book/audio/46.mp3
+    - asset/book/audio/47.mp3
+    - asset/book/audio/48.mp3
+    - asset/book/audio/49.mp3
+    - asset/book/audio/50.mp3
+    - asset/book/audio/51.mp3
+    - asset/book/audio/52.mp3
+    - asset/book/audio/53.mp3
+    - asset/book/audio/54.mp3
+    - asset/book/audio/55.mp3
+    - asset/audio/help1.mp3
+    - asset/audio/help2_2.mp3
+    - asset/audio/help3.mp3
+    - asset/audio/help3.mp3
+    - asset/audio/help4.mp3
+    - asset/audio/help5.mp3
+    - asset/audio/help6.mp3
+    - asset/audio/help7.mp3
+    - asset/audio/help8.mp3
+    - asset/audio/help9.mp3
+    - asset/audio/RoyasSong.mp3
+    - asset/audio/bensound-buddy.mp3
+    - asset/audio/bensound-creepy.mp3
+    - asset/audio/bensound-cute.mp3
+    - asset/audio/bensound-funnysong.mp3
+    - asset/audio/bensound-hey.mp3
+    - asset/audio/bensound-smile.mp3
+    - asset/audio/bensound-ukulele.mp3
+    
+    
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
